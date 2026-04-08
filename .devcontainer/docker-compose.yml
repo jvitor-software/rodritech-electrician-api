@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/java:21
+    command: sleep infinity
+    # Removemos a tag 'volumes' para o Codespaces gerenciar nativamente
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: rodritech_db
